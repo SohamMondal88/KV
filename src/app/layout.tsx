@@ -69,6 +69,7 @@ import { CartProvider } from "@/lib/cart-context";
 import { AuthProvider } from "@/lib/auth-context";
 import AmbientSound from "@/components/AmbientSound";
 
+import { FloatingButtons } from "@/components/FloatingButtons";
 import { CommandPalette } from "@/components/CommandPalette";
 import { MobileDock } from "@/components/MobileDock";
 import { SeasonalEffects } from "@/components/SeasonalEffects";
@@ -95,6 +96,7 @@ export default function RootLayout({
             <AIChatbot />
             <AmbientSound />
             <MobileDock />
+            <FloatingButtons />
           </CartProvider>
         </AuthProvider>
       </body>
