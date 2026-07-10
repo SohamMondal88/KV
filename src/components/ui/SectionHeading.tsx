@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export interface SectionHeadingProps
-  extends React.HTMLAttributes<HTMLDivElement> {
-  title: string;
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, "title"> {
+  title: React.ReactNode;
   subtitle?: string;
   align?: "left" | "center";
   accentColor?: string;

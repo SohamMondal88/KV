@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { StarRating } from "@/components/ui/StarRating";
 import { DestinationsOverviewMap } from "@/components/maps/DestinationsOverviewMap";
+import { GradientBorder, HoverGlow, StaggerGrid, TextReveal } from "@/components/animations/MicroInteractions";
 
 export default function DestinationsPage() {
   const [search, setSearch] = useState("");
@@ -42,19 +43,6 @@ export default function DestinationsPage() {
     });
   }, [search, stateFilter, tagFilter, ratingFilter]);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.07 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 24 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" as const } },
-  };
-
   const clearFilters = () => {
     setSearch("");
     setStateFilter("All");
@@ -74,7 +62,7 @@ export default function DestinationsPage() {
             className="mx-auto max-w-3xl text-center"
           >
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-              Discover 17 Hidden Destinations
+              <TextReveal>Discover 17 Hidden Destinations</TextReveal>
             </h1>
             <p className="mt-4 text-lg text-primary-foreground/80">
               Explore offbeat Himalayan gems curated for the curious traveler.
@@ -166,57 +154,65 @@ export default function DestinationsPage() {
             </Button>
           </div>
         ) : (
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
+          <StaggerGrid
             className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+            staggerDelay={0.06}
           >
             {filtered.map((d) => (
-              <motion.div key={d.id} variants={itemVariants}>
-                <Card className="group h-full overflow-hidden">
-                  <div className="relative h-48 w-full overflow-hidden">
-                    <Image
-                      src={d.heroImage}
-                      alt={d.name}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute left-3 top-3">
-                      <Badge variant="accent">{d.state}</Badge>
+              <div key={d.id} className="group">
+                <GradientBorder
+                  borderWidth={2}
+                  borderRadius="1.25rem"
+                  colors={["#FF8A00", "#F6C453", "#7DD3FC", "#FF8A00"]}
+                  duration={4}
+                  className="h-full"
+                >
+                  <Card className="h-full overflow-hidden border-0 bg-card">
+                    <HoverGlow glowColor="rgba(255,138,0,0.15)" glowSize={140}>
+                      <div className="relative h-48 w-full overflow-hidden">
+                        <Image
+                          src={d.heroImage}
+                          alt={d.name}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute left-3 top-3">
+                          <Badge variant="accent">{d.state}</Badge>
+                        </div>
+                      </div>
+                    </HoverGlow>
+                    <div className="flex flex-col p-5">
+                      <div className="flex items-start justify-between gap-2">
+                        <h3 className="text-lg font-semibold">{d.name}</h3>
+                        <span className="shrink-0 text-xs font-medium text-muted-foreground">
+                          {d.budgetPlanner.midRange}
+                        </span>
+                      </div>
+                      <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{d.tagline}</p>
+                      <div className="mt-3 flex flex-wrap gap-1">
+                        {d.tags.slice(0, 3).map((tag) => (
+                          <Badge key={tag} variant="outline" className="text-[10px]">
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                      <div className="mt-4 flex items-center justify-between">
+                        <StarRating rating={d.rating} size={14} showValue />
+                        <span className="text-xs text-muted-foreground">{d.reviewCount} reviews</span>
+                      </div>
+                      <div className="mt-4">
+                        <Link href={`/destinations/${d.slug}`} className="block w-full">
+                          <Button variant="primary" size="sm" className="w-full">
+                            View Details
+                          </Button>
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex flex-col p-5">
-                    <div className="flex items-start justify-between gap-2">
-                      <h3 className="text-lg font-semibold">{d.name}</h3>
-                      <span className="shrink-0 text-xs font-medium text-muted-foreground">
-                        {d.budgetPlanner.midRange}
-                      </span>
-                    </div>
-                    <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{d.tagline}</p>
-                    <div className="mt-3 flex flex-wrap gap-1">
-                      {d.tags.slice(0, 3).map((tag) => (
-                        <Badge key={tag} variant="outline" className="text-[10px]">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                    <div className="mt-4 flex items-center justify-between">
-                      <StarRating rating={d.rating} size={14} showValue />
-                      <span className="text-xs text-muted-foreground">{d.reviewCount} reviews</span>
-                    </div>
-                    <div className="mt-4">
-                      <Link href={`/destinations/${d.slug}`} className="block w-full">
-                        <Button variant="primary" size="sm" className="w-full">
-                          View Details
-                        </Button>
-                      </Link>
-                    </div>
-                  </div>
-                </Card>
-              </motion.div>
+                  </Card>
+                </GradientBorder>
+              </div>
             ))}
-          </motion.div>
+          </StaggerGrid>
         )}
       </Container>
     </div>

@@ -13,7 +13,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { StarRating } from "@/components/ui/StarRating";
-import { Button } from "@/components/ui/Button";
+import { TiltCard, CountUp, RippleButton, TextReveal, HoverGlow } from "@/components/animations/MicroInteractions";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -82,7 +82,7 @@ export default function PackagesPage() {
             className="mx-auto max-w-3xl text-center"
           >
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-              Curated Travel Packages
+              <TextReveal>Curated Travel Packages</TextReveal>
             </h1>
             <p className="mt-4 text-lg text-primary-foreground/80 sm:text-xl">
               Handpicked experiences for every kind of traveler. Explore the
@@ -153,86 +153,88 @@ function PackageCard({
 }) {
   return (
     <motion.div variants={itemVariants}>
-      <Card className="flex h-full flex-col overflow-hidden">
-        <div className="relative h-48 w-full overflow-hidden sm:h-52">
-          <Image
-            src={pkg.image}
-            alt={pkg.name}
-            fill
-            className="object-cover transition-transform duration-500 hover:scale-105"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
-          <div className="absolute left-3 top-3">
-            <Badge variant="accent">
-              {pkg.type.charAt(0).toUpperCase() + pkg.type.slice(1)}
-            </Badge>
-          </div>
-          {pkg.featured && (
-            <div className="absolute right-3 top-3">
-              <Badge variant="primary">Featured</Badge>
+      <TiltCard maxTilt={6}>
+        <Card className="flex h-full flex-col overflow-hidden">
+          <div className="relative h-48 w-full overflow-hidden sm:h-52">
+            <Image
+              src={pkg.image}
+              alt={pkg.name}
+              fill
+              className="object-cover transition-transform duration-500 hover:scale-105"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+            <div className="absolute left-3 top-3">
+              <Badge variant="accent">
+                {pkg.type.charAt(0).toUpperCase() + pkg.type.slice(1)}
+              </Badge>
             </div>
-          )}
-        </div>
-
-        <div className="flex flex-1 flex-col p-5">
-          <div className="flex items-start justify-between gap-2">
-            <h3 className="text-lg font-semibold leading-snug text-foreground">
-              {pkg.name}
-            </h3>
-          </div>
-
-          <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-            <span className="inline-flex items-center gap-1">
-              <Clock className="h-3.5 w-3.5" />
-              {pkg.duration}
-            </span>
-            <span className="inline-flex items-center gap-1">
-              <MapPin className="h-3.5 w-3.5" />
-              {pkg.destinations.join(", ")}
-            </span>
-          </div>
-
-          <div className="mt-3">
-            <StarRating rating={pkg.rating} size={16} showValue />
-            <span className="ml-1 text-xs text-muted-foreground">
-              ({pkg.reviewCount} reviews)
-            </span>
-          </div>
-
-          <p className="mt-3 line-clamp-2 text-sm text-muted-foreground">
-            {pkg.description}
-          </p>
-
-          {pkg.highlights.length > 0 && (
-            <ul className="mt-3 space-y-1">
-              {pkg.highlights.slice(0, 3).map((highlight, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-2 text-sm text-muted-foreground"
-                >
-                  <span className="mt-1.5 block h-1 w-1 shrink-0 rounded-full bg-accent" />
-                  {highlight}
-                </li>
-              ))}
-            </ul>
-          )}
-
-          <div className="mt-auto flex items-end justify-between gap-3 pt-5">
-            <div>
-              <div className="text-xs text-muted-foreground line-through">
-                {formatPrice(pkg.originalPrice)}
+            {pkg.featured && (
+              <div className="absolute right-3 top-3">
+                <Badge variant="primary">Featured</Badge>
               </div>
-              <div className="text-xl font-bold text-foreground">
-                {formatPrice(pkg.price)}
-              </div>
+            )}
+          </div>
+
+          <div className="flex flex-1 flex-col p-5">
+            <div className="flex items-start justify-between gap-2">
+              <h3 className="text-lg font-semibold leading-snug text-foreground">
+                {pkg.name}
+              </h3>
             </div>
-            <Button size="sm" variant="primary">
-              <Eye className="mr-1 h-3.5 w-3.5" />
-              View Details
-            </Button>
+
+            <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+              <span className="inline-flex items-center gap-1">
+                <Clock className="h-3.5 w-3.5" />
+                {pkg.duration}
+              </span>
+              <span className="inline-flex items-center gap-1">
+                <MapPin className="h-3.5 w-3.5" />
+                {pkg.destinations.join(", ")}
+              </span>
+            </div>
+
+            <div className="mt-3">
+              <StarRating rating={pkg.rating} size={16} showValue />
+              <span className="ml-1 text-xs text-muted-foreground">
+                ({pkg.reviewCount} reviews)
+              </span>
+            </div>
+
+            <p className="mt-3 line-clamp-2 text-sm text-muted-foreground">
+              {pkg.description}
+            </p>
+
+            {pkg.highlights.length > 0 && (
+              <ul className="mt-3 space-y-1">
+                {pkg.highlights.slice(0, 3).map((highlight, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start gap-2 text-sm text-muted-foreground"
+                  >
+                    <span className="mt-1.5 block h-1 w-1 shrink-0 rounded-full bg-accent" />
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            <div className="mt-auto flex items-end justify-between gap-3 pt-5">
+              <div>
+                <div className="text-xs text-muted-foreground line-through">
+                  {formatPrice(pkg.originalPrice)}
+                </div>
+                <div className="text-xl font-bold text-foreground">
+                  <CountUp target={pkg.price} prefix="₹" />
+                </div>
+              </div>
+              <RippleButton className="inline-flex h-9 items-center justify-center gap-2 rounded-lg bg-accent px-4 text-sm font-medium text-white transition-colors hover:bg-orange-600">
+                <Eye className="mr-1 h-3.5 w-3.5" />
+                Book Now
+              </RippleButton>
+            </div>
           </div>
-        </div>
-      </Card>
+        </Card>
+      </TiltCard>
     </motion.div>
   );
 }

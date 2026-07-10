@@ -6,7 +6,6 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { CounterAnimation } from "@/components/animations/GSAPScroll";
 import {
   MapPin,
   Heart,
@@ -17,30 +16,43 @@ import {
   Mountain,
   Building,
   Package,
+  ArrowRight,
 } from "lucide-react";
+import {
+  ParallaxLayer,
+  TextReveal,
+  CountUp,
+  IconMorph,
+  HoverGlow,
+  FadeInSection,
+} from "@/components/animations/MicroInteractions";
 
 export default function AboutPage() {
   const valueCards = [
     {
       icon: MapPin,
+      hoverIcon: ArrowRight,
       title: "Local Expertise",
       description:
         "Our team lives and breathes the Himalayas. Every recommendation comes from first-hand experience and deep local relationships.",
     },
     {
       icon: Heart,
+      hoverIcon: ArrowRight,
       title: "Authentic Experiences",
       description:
         "We go beyond sightseeing. Stay in village homes, share meals with families, and participate in age-old traditions.",
     },
     {
       icon: Leaf,
+      hoverIcon: ArrowRight,
       title: "Sustainable Tourism",
       description:
         "We are committed to low-impact travel. Our partnerships fund conservation and empower communities directly.",
     },
     {
       icon: ShieldCheck,
+      hoverIcon: ArrowRight,
       title: "Verified Stays",
       description:
         "Every homestay and hotel is personally inspected. Clean, safe, and genuinely welcoming — guaranteed.",
@@ -115,7 +127,7 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl"
           >
-            Our Story
+            <TextReveal>Our Story</TextReveal>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -129,134 +141,123 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="py-16">
-        <Container>
-          <div className="mx-auto max-w-3xl text-center">
-            <SectionHeading
-              title="Our Mission"
-              subtitle="To make the hidden corners of the Himalayas accessible, sustainable, and unforgettable — one traveler at a time."
-            />
-            <p className="mt-6 text-muted-foreground">
-              We believe the best travel stories are found where the roads end. Our mission is to connect
-              conscious travelers with offbeat destinations while preserving their natural and cultural heritage.
-            </p>
-          </div>
-        </Container>
-      </section>
+      <ParallaxLayer speed={0.15}>
+        <section className="py-16">
+          <Container>
+            <div className="mx-auto max-w-3xl text-center">
+              <SectionHeading
+                title={<TextReveal>Our Mission</TextReveal>}
+                subtitle="To make the hidden corners of the Himalayas accessible, sustainable, and unforgettable — one traveler at a time."
+              />
+              <p className="mt-6 text-muted-foreground">
+                We believe the best travel stories are found where the roads end. Our mission is to connect
+                conscious travelers with offbeat destinations while preserving their natural and cultural heritage.
+              </p>
+            </div>
+          </Container>
+        </section>
+      </ParallaxLayer>
 
       {/* Why KuboVista */}
       <section className="border-t border-border bg-muted/40 py-16">
         <Container>
           <SectionHeading
-            title="Why KuboVista?"
+            title={<TextReveal>Why KuboVista?</TextReveal>}
             subtitle="Four pillars that define everything we do."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {valueCards.map((vc, i) => (
-              <motion.div
-                key={vc.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <Card className="flex h-full flex-col p-6">
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <vc.icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="text-lg font-bold text-foreground">{vc.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {vc.description}
-                  </p>
-                </Card>
-              </motion.div>
+              <FadeInSection key={vc.title} delay={i * 0.1} direction="up">
+                <HoverGlow glowColor="rgba(246,196,83,0.15)" glowSize={100}>
+                  <Card className="flex h-full flex-col p-6 group">
+                    <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                      <IconMorph
+                        icon={<vc.icon className="h-5 w-5" />}
+                        hoverIcon={<vc.hoverIcon className="h-5 w-5" />}
+                      />
+                    </div>
+                    <h3 className="text-lg font-bold text-foreground">{vc.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {vc.description}
+                    </p>
+                  </Card>
+                </HoverGlow>
+              </FadeInSection>
             ))}
           </div>
         </Container>
       </section>
 
       {/* Stats */}
-      <section className="py-16">
-        <Container>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((s, i) => (
-              <motion.div
-                key={s.label}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="flex flex-col items-center rounded-2xl border border-border bg-card p-8 text-center"
-              >
-                <s.icon className="h-8 w-8 text-primary" />
-                <span className="mt-4 text-3xl font-extrabold text-foreground">
-                  <CounterAnimation target={s.value} suffix={s.suffix} duration={2} />
-                </span>
-                <span className="mt-1 text-sm font-medium text-muted-foreground">
-                  {s.label}
-                </span>
-              </motion.div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <ParallaxLayer speed={0.2}>
+        <section className="py-16">
+          <Container>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {stats.map((s, i) => (
+                <FadeInSection key={s.label} delay={i * 0.1} direction="up">
+                  <div className="flex flex-col items-center rounded-2xl border border-border bg-card p-8 text-center">
+                    <s.icon className="h-8 w-8 text-primary" />
+                    <span className="mt-4 text-3xl font-extrabold text-foreground">
+                      <CountUp target={s.value} suffix={s.suffix} duration={2} />
+                    </span>
+                    <span className="mt-1 text-sm font-medium text-muted-foreground">
+                      {s.label}
+                    </span>
+                  </div>
+                </FadeInSection>
+              ))}
+            </div>
+          </Container>
+        </section>
+      </ParallaxLayer>
 
       {/* Team */}
-      <section className="border-t border-border bg-muted/40 py-16">
-        <Container>
-          <SectionHeading
-            title="Meet the Team"
-            subtitle="The people behind your Himalayan adventures."
-          />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {teamMembers.map((member, i) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <Card className="flex h-full flex-col p-6 text-center">
-                  <div className="mx-auto flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-muted">
-                    <Users className="h-8 w-8 text-muted-foreground" />
-                  </div>
-                  <h3 className="mt-4 text-lg font-bold text-foreground">
-                    {member.name}
-                  </h3>
-                  <p className="text-sm font-medium text-primary">{member.role}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {member.bio}
-                  </p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <ParallaxLayer speed={-0.1}>
+        <section className="border-t border-border bg-muted/40 py-16">
+          <Container>
+            <SectionHeading
+              title={<TextReveal>Meet the Team</TextReveal>}
+              subtitle="The people behind your Himalayan adventures."
+            />
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {teamMembers.map((member, i) => (
+                <FadeInSection key={member.name} delay={i * 0.1} direction="up">
+                  <Card className="flex h-full flex-col p-6 text-center">
+                    <div className="mx-auto flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-muted">
+                      <Users className="h-8 w-8 text-muted-foreground" />
+                    </div>
+                    <h3 className="mt-4 text-lg font-bold text-foreground">
+                      {member.name}
+                    </h3>
+                    <p className="text-sm font-medium text-primary">{member.role}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {member.bio}
+                    </p>
+                  </Card>
+                </FadeInSection>
+              ))}
+            </div>
+          </Container>
+        </section>
+      </ParallaxLayer>
 
       {/* Our Values */}
       <section className="py-16">
         <Container>
           <SectionHeading
-            title="Our Values"
+            title={<TextReveal>Our Values</TextReveal>}
             subtitle="Principles that guide every decision we make."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {values.map((v, i) => (
-              <motion.div
-                key={v.title}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-              >
+              <FadeInSection key={v.title} delay={i * 0.1} direction={i % 2 === 0 ? "left" : "right"}>
                 <Card className="p-6">
                   <h3 className="text-lg font-bold text-foreground">{v.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                     {v.text}
                   </p>
                 </Card>
-              </motion.div>
+              </FadeInSection>
             ))}
           </div>
         </Container>

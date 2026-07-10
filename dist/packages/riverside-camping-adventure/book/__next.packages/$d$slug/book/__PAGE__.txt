@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[8911,["/_next/static/chunks/1alscr3sxrewv.js","/_next/static/chunks/26508o3huq2v0.js","/_next/static/chunks/14mrh2-p_w84d.js","/_next/static/chunks/3gh14lw_oeed5.js","/_next/static/chunks/3aua3311wodvq.js","/_next/static/chunks/2_kf_gux2wbq_.js"],"default"]
-3:I[97367,["/_next/static/chunks/1alscr3sxrewv.js","/_next/static/chunks/26508o3huq2v0.js","/_next/static/chunks/14mrh2-p_w84d.js","/_next/static/chunks/3gh14lw_oeed5.js","/_next/static/chunks/3aua3311wodvq.js"],"OutletBoundary"]
+2:I[8911,["/_next/static/chunks/1alscr3sxrewv.js","/_next/static/chunks/1pb8r5cq6oblz.js","/_next/static/chunks/1m74gnn2v62qo.js","/_next/static/chunks/2e_t6hw9vj_81.js","/_next/static/chunks/0lzt0bdiq1dn0.js","/_next/static/chunks/14mrh2-p_w84d.js","/_next/static/chunks/0lvw97gs6rdgs.js"],"default"]
+3:I[97367,["/_next/static/chunks/1alscr3sxrewv.js","/_next/static/chunks/1pb8r5cq6oblz.js","/_next/static/chunks/1m74gnn2v62qo.js","/_next/static/chunks/2e_t6hw9vj_81.js","/_next/static/chunks/0lzt0bdiq1dn0.js","/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"slug":"riverside-camping-adventure"}],[["$","script","script-0",{"src":"/_next/static/chunks/2_kf_gux2wbq_.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"s_ONaw77ZlpJNAS3mciu3"}
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"slug":"riverside-camping-adventure"}],[["$","script","script-0",{"src":"/_next/static/chunks/0lvw97gs6rdgs.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"b9BlMIk3YBrP5yDh_9aEg"}
 5:null

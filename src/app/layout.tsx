@@ -4,6 +4,8 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import AIChatbot from "@/components/AIChatbot";
+import LoadingScreen from "@/components/LoadingScreen";
+import { PageTransition } from "@/components/PageTransition";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -65,6 +67,11 @@ export const metadata: Metadata = {
 
 import { CartProvider } from "@/lib/cart-context";
 import { AuthProvider } from "@/lib/auth-context";
+import AmbientSound from "@/components/AmbientSound";
+
+import { CommandPalette } from "@/components/CommandPalette";
+import { MobileDock } from "@/components/MobileDock";
+import { SeasonalEffects } from "@/components/SeasonalEffects";
 
 export default function RootLayout({
   children,
@@ -80,10 +87,14 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col font-sans">
         <AuthProvider>
           <CartProvider>
+            <SeasonalEffects />
+            <CommandPalette />
             <Navbar />
             <main className="flex-1">{children}</main>
             <Footer />
             <AIChatbot />
+            <AmbientSound />
+            <MobileDock />
           </CartProvider>
         </AuthProvider>
       </body>
