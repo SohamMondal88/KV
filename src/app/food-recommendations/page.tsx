@@ -548,7 +548,7 @@ export default function FoodRecommendationsPage() {
   const handleShare = async (text: string) => {
     if (navigator.share) {
       try {
-        await navigator.share({ title: "Hidden Gems Food Recommendation", text });
+        await navigator.share({ title: "KuboVista Food Recommendation", text });
       } catch {}
     } else {
       try {
@@ -1176,7 +1176,7 @@ export default function FoodRecommendationsPage() {
                   size="sm"
                   onClick={() =>
                     handleShare(
-                      `My Hidden Gems Food Trail: ${trailStops
+                      `My KuboVista Food Trail: ${trailStops
                         .map((s) => s.name)
                         .join(" → ")}`
                     )

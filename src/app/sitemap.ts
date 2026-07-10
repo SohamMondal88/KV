@@ -11,7 +11,7 @@ type SitemapEntry = {
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://hiddengems.travel";
+  const baseUrl = "https://KuboVista.travel";
 
   const staticRoutes: { route: string; freq: SitemapEntry["changeFrequency"]; priority: number }[] = [
     { route: "", freq: "daily", priority: 1.0 },
@@ -34,6 +34,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: "/weather-suggest", freq: "weekly", priority: 0.7 },
     { route: "/food-recommendations", freq: "weekly", priority: 0.7 },
     { route: "/hotel-recommendations", freq: "weekly", priority: 0.7 },
+    { route: "/book-taxi", freq: "weekly", priority: 0.7 },
+    { route: "/book-guide", freq: "weekly", priority: 0.7 },
+    { route: "/book-trek", freq: "weekly", priority: 0.7 },
+    { route: "/book-activity", freq: "weekly", priority: 0.7 },
+    { route: "/cart", freq: "daily", priority: 0.6 },
+    { route: "/checkout", freq: "daily", priority: 0.6 },
+    { route: "/my-bookings", freq: "weekly", priority: 0.8 },
+    { route: "/currency-converter", freq: "weekly", priority: 0.7 },
+    { route: "/quiz", freq: "weekly", priority: 0.7 },
+    { route: "/leaderboard", freq: "weekly", priority: 0.6 },
+    { route: "/login", freq: "monthly", priority: 0.5 },
+    { route: "/register", freq: "monthly", priority: 0.5 },
+    { route: "/dashboard", freq: "weekly", priority: 0.8 },
+    { route: "/admin", freq: "monthly", priority: 0.4 },
+    { route: "/join", freq: "monthly", priority: 0.6 },
+    { route: "/booking-confirmation", freq: "monthly", priority: 0.5 },
     { route: "/wishlist", freq: "monthly", priority: 0.5 },
   ];
 

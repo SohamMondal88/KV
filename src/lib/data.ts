@@ -82,7 +82,7 @@ export const destinations: Destination[] = [
       { id: "a2", name: "Deolo Hill", description: "Highest point in Kalimpong offering 360-degree views.", image: "", category: "Viewpoint" },
       { id: "a3", name: "Morgan House", description: "Colonial-era heritage property with scenic gardens.", image: "", category: "Heritage" },
     ],
-    hiddenGems: [
+    KuboVista: [
       { id: "h1", name: "Dr. Graham's Homes", description: "A beautiful school campus with Scottish architecture.", image: "", whyVisit: "Peaceful walks and historical significance" },
       { id: "h2", name: "Pine View Nursery", description: "Famous for its cactus collection and exotic plants.", image: "", whyVisit: "Unique botanical experience" },
     ],
@@ -107,7 +107,7 @@ export const destinations: Destination[] = [
     ],
     suggestedItineraries: [
       { days: 1, title: "Kalimpong in a Day", overview: "Cover major attractions in a single day.", daysPlan: [{ day: 1, title: "Quick Exploration", activities: ["Deolo Hill sunrise", "Durpin Monastery", "Morgan House", "Local market"], meals: ["Breakfast at cafe", "Lunch at local restaurant", "Evening tea"], transport: "Local taxi", accommodation: "Budget hotel/homestay", budget: "₹2,000" }], estimatedBudget: "₹2,000-3,000" },
-      { days: 2, title: "Weekend Escape", overview: "Relaxed weekend covering main attractions and hidden gems.", daysPlan: [{ day: 1, title: "Arrival & Exploration", activities: ["Check-in", "Durpin Monastery", "Pine View Nursery", "Sunset at Deolo"], meals: ["Lunch", "Dinner"], transport: "Taxi", accommodation: "Homestay", budget: "₹2,500" }, { day: 2, title: "Nature & Culture", activities: ["Dr. Graham's Homes", "Local village walk", "Flower market", "Departure"], meals: ["Breakfast", "Lunch"], transport: "Taxi", accommodation: "N/A", budget: "₹1,500" }], estimatedBudget: "₹4,000-6,000" },
+      { days: 2, title: "Weekend Escape", overview: "Relaxed weekend covering main attractions and KuboVista.", daysPlan: [{ day: 1, title: "Arrival & Exploration", activities: ["Check-in", "Durpin Monastery", "Pine View Nursery", "Sunset at Deolo"], meals: ["Lunch", "Dinner"], transport: "Taxi", accommodation: "Homestay", budget: "₹2,500" }, { day: 2, title: "Nature & Culture", activities: ["Dr. Graham's Homes", "Local village walk", "Flower market", "Departure"], meals: ["Breakfast", "Lunch"], transport: "Taxi", accommodation: "N/A", budget: "₹1,500" }], estimatedBudget: "₹4,000-6,000" },
     ],
     nearbyPlaces: [
       { name: "Darjeeling", distance: "50 km", description: "Famous tea gardens and toy train." },
@@ -136,7 +136,7 @@ export const destinations: Destination[] = [
       { id: "a1", name: "Rhododendron Forest", description: "Dense forest with blooming rhododendrons in spring.", image: "", category: "Nature" },
       { id: "a2", name: "Lepcha Heritage Museum", description: "Showcases the rich culture of the Lepcha tribe.", image: "", category: "Culture" },
     ],
-    hiddenGems: [
+    KuboVista: [
       { id: "h1", name: "Pabong Lake", description: "A serene glacial lake surrounded by prayer flags.", image: "", whyVisit: "Peaceful and spiritually uplifting" },
     ],
     viewpoints: [
@@ -183,7 +183,7 @@ export const destinations: Destination[] = [
       { id: "a1", name: "Lebong Racecourse", description: "The highest racecourse in the world.", image: "", category: "Unique" },
       { id: "a2", name: "Happy Valley Tea Estate", description: "One of the oldest tea estates in Darjeeling.", image: "", category: "Heritage" },
     ],
-    hiddenGems: [
+    KuboVista: [
       { id: "h1", name: "Lebong Cemetery", description: "A quiet colonial-era cemetery with historical graves.", image: "", whyVisit: "Historical significance and peace" },
     ],
     viewpoints: [
@@ -230,7 +230,7 @@ export const destinations: Destination[] = [
       { id: "a1", name: "Icche Gaon", description: "A scenic village known for its sunrise views.", image: "", category: "Nature" },
       { id: "a2", name: "Teesta River Viewpoint", description: "Stunning views of the Teesta River winding through the valley.", image: "", category: "Viewpoint" },
     ],
-    hiddenGems: [
+    KuboVista: [
       { id: "h1", name: "Sillery Gaon Walk", description: "A serene forest trail connecting Ramdhura to Sillery Gaon.", image: "", whyVisit: "Birdwatching and peace" },
     ],
     viewpoints: [
@@ -277,7 +277,7 @@ export const destinations: Destination[] = [
       { id: "a1", name: "Sumendu Lake", description: "A beautiful man-made lake with a walking path.", image: "", category: "Nature" },
       { id: "a2", name: "Bokar Monastery", description: "A serene Buddhist monastery overlooking the valley.", image: "", category: "Religious" },
     ],
-    hiddenGems: [
+    KuboVista: [
       { id: "h1", name: "Orange Orchards", description: "Walk through fragrant orange groves.", image: "", whyVisit: "Seasonal fruit picking and photography" },
     ],
     viewpoints: [
@@ -326,7 +326,7 @@ export const destinations: Destination[] = [
       { id: "a1", name: "Lamahatta Lake", description: "A serene sacred lake surrounded by prayer flags.", image: "", category: "Nature" },
       { id: "a2", name: "Dhokrey Village", description: "A traditional village with panoramic mountain views.", image: "", category: "Culture" },
     ],
-    hiddenGems: [
+    KuboVista: [
       { id: "h1", name: "Pine Forest Meditation Spot", description: "A quiet spot in the pine forest for meditation.", image: "", whyVisit: "Peace and connection with nature" },
     ],
     viewpoints: [
@@ -373,7 +373,7 @@ export const destinations: Destination[] = [
       { id: "a1", name: "Lepcha Cultural Center", description: "Museum showcasing Lepcha traditions and artifacts.", image: "", category: "Culture" },
       { id: "a2", name: "Sunrise Point", description: "Famous for golden sunrise over Kanchenjunga.", image: "", category: "Viewpoint" },
     ],
-    hiddenGems: [
+    KuboVista: [
       { id: "h1", name: "Ancient Lepcha Grove", description: "Sacred forest preserved by the Lepcha community.", image: "", whyVisit: "Spiritual and cultural significance" },
     ],
     viewpoints: [
@@ -420,7 +420,7 @@ export const destinations: Destination[] = [
       { id: "a1", name: "Orchid Sanctuary", description: "Home to rare Himalayan orchids.", image: "", category: "Nature" },
       { id: "a2", name: "Chatakpur Watchtower", description: "Best views of the surrounding peaks.", image: "", category: "Viewpoint" },
     ],
-    hiddenGems: [
+    KuboVista: [
       { id: "h1", name: "Rhododendron Valley", description: "Valley filled with blooming rhododendrons in spring.", image: "", whyVisit: "Spectacular colors and biodiversity" },
     ],
     viewpoints: [
@@ -467,7 +467,7 @@ export const destinations: Destination[] = [
       { id: "a1", name: "Neora Valley National Park", description: "Rich biodiversity with red pandas and clouded leopards.", image: "", category: "Nature" },
       { id: "a2", name: "Samsing Tea Garden", description: "Picturesque tea garden with factory visits.", image: "", category: "Heritage" },
     ],
-    hiddenGems: [
+    KuboVista: [
       { id: "h1", name: "Lava Jamunae", description: "A hidden waterfall in the forest.", image: "", whyVisit: "Secluded and pristine" },
     ],
     viewpoints: [
@@ -515,7 +515,7 @@ export const destinations: Destination[] = [
       { id: "a1", name: "Ahaldhara Viewpoint", description: "Panoramic views of the surrounding hills and valleys.", image: "", category: "Viewpoint" },
       { id: "a2", name: "Orange Orchards", description: "Endless rows of orange trees during harvest season.", image: "", category: "Nature" },
     ],
-    hiddenGems: [
+    KuboVista: [
       { id: "h1", name: "Bamboo Bridge", description: "A handmade bamboo bridge over a stream.", image: "", whyVisit: "Traditional engineering and photo opportunity" },
     ],
     viewpoints: [
@@ -563,7 +563,7 @@ export const destinations: Destination[] = [
       { id: "a1", name: "Rangeet River", description: "Crystal clear river with boulders and pools.", image: "", category: "Nature" },
       { id: "a2", name: "Tea Gardens", description: "Rolling tea estates with factory visits.", image: "", category: "Heritage" },
     ],
-    hiddenGems: [
+    KuboVista: [
       { id: "h1", name: "Natural Pool", description: "A swimming hole in the Rangeet River.", image: "", whyVisit: "Refreshingly cold and secluded" },
     ],
     viewpoints: [
@@ -610,7 +610,7 @@ export const destinations: Destination[] = [
       { id: "a1", name: "Ahaldhara Viewpoint", description: "The main attraction with 360-degree views.", image: "", category: "Viewpoint" },
       { id: "a2", name: "Namthing Pokhri", description: "A seasonal lake known for sighting salamanders.", image: "", category: "Nature" },
     ],
-    hiddenGems: [
+    KuboVista: [
       { id: "h1", name: "Hidden Waterfall", description: "A small waterfall off the main trail.", image: "", whyVisit: "Peaceful and photogenic" },
     ],
     viewpoints: [
@@ -657,7 +657,7 @@ export const destinations: Destination[] = [
       { id: "a1", name: "Pine Forest", description: "Dense pine and dhupi forests.", image: "", category: "Nature" },
       { id: "a2", name: "Village Walk", description: "Scenic walks through traditional villages.", image: "", category: "Culture" },
     ],
-    hiddenGems: [
+    KuboVista: [
       { id: "h1", name: "Forest Meditation Spot", description: "A quiet spot deep in the pine forest.", image: "", whyVisit: "Perfect for meditation and reflection" },
     ],
     viewpoints: [
@@ -704,7 +704,7 @@ export const destinations: Destination[] = [
       { id: "a1", name: "Kanchenjunga View", description: "Close-up views of the world's third highest peak.", image: "", category: "Viewpoint" },
       { id: "a2", name: "Changey Falls", description: "A beautiful waterfall surrounded by forest.", image: "", category: "Nature" },
     ],
-    hiddenGems: [
+    KuboVista: [
       { id: "h1", name: "Rhododendron Grove", description: "Ancient rhododendron trees.", image: "", whyVisit: "Beautiful blooms in spring" },
     ],
     viewpoints: [
@@ -751,7 +751,7 @@ export const destinations: Destination[] = [
       { id: "a1", name: "Triveni Viewpoint", description: "Confluence of Teesta and Rangeet rivers.", image: "", category: "Viewpoint" },
       { id: "a2", name: "Peshok Tea Garden", description: "Vast tea plantations with factory tours.", image: "", category: "Heritage" },
     ],
-    hiddenGems: [
+    KuboVista: [
       { id: "h1", name: "River Confluence Beach", description: "A sandy beach where two rivers meet.", image: "", whyVisit: "Unique geography and peaceful atmosphere" },
     ],
     viewpoints: [
@@ -798,7 +798,7 @@ export const destinations: Destination[] = [
       { id: "a1", name: "Rishi River", description: "Crystal clear river with boulders and camping spots.", image: "", category: "Nature" },
       { id: "a2", name: "Samsing Tea Garden", description: "Picturesque tea gardens nearby.", image: "", category: "Heritage" },
     ],
-    hiddenGems: [
+    KuboVista: [
       { id: "h1", name: "Secret Fishing Spot", description: "A quiet spot perfect for angling.", image: "", whyVisit: "Peaceful and abundant with trout" },
     ],
     viewpoints: [
@@ -849,7 +849,7 @@ export const destinations: Destination[] = [
       { id: "a3", name: "Khecheopalri Lake", description: "Sacred wish-fulfilling lake surrounded by forest.", image: "", category: "Nature" },
       { id: "a4", name: "Sangacholing Monastery", description: "One of the oldest monasteries in Sikkim with stunning views.", image: "", category: "Religious" },
     ],
-    hiddenGems: [
+    KuboVista: [
       { id: "h1", name: "Yuksom Village", description: "The first capital of Sikkim with historical significance.", image: "", whyVisit: "Historical trek starting point and cultural immersion" },
       { id: "h2", name: "Kanchenjunga Falls", description: "A majestic waterfall on the way to Yuksom.", image: "", whyVisit: "Beautiful natural spectacle" },
     ],
@@ -940,7 +940,7 @@ export const packages: Package[] = [
   },
   {
     id: "pkg-3",
-    name: "Hidden Gems Photography Tour",
+    name: "KuboVista Photography Tour",
     slug: "hidden-gems-photography",
     type: "photography",
     image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop",
@@ -1103,7 +1103,7 @@ export const hotels: Hotel[] = [
 export const blogPosts: BlogPost[] = [
   {
     id: "blog-1",
-    title: "Hidden Gems of North Bengal: A Complete Guide",
+    title: "KuboVista of North Bengal: A Complete Guide",
     slug: "hidden-gems-north-bengal-guide",
     excerpt: "Discover the lesser-known destinations of North Bengal that offer breathtaking views, rich culture, and authentic experiences.",
     content: "North Bengal is home to some of India's most beautiful yet unexplored destinations...",
@@ -1111,7 +1111,7 @@ export const blogPosts: BlogPost[] = [
     author: { name: "Rahul Sharma", avatar: "" },
     publishedAt: "2024-11-15",
     readTime: "8 min read",
-    tags: ["North Bengal", "Hidden Gems", "Travel Guide"],
+    tags: ["North Bengal", "KuboVista", "Travel Guide"],
     category: "Travel Guide",
   },
   {

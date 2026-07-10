@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "My Wishlist | Hidden Gems",
+  title: "My Wishlist | KuboVista",
 };
 
 export default function WishlistLayout({

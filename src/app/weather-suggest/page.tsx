@@ -430,14 +430,14 @@ export default function WeatherSuggestPage() {
   }, [topRecommendations]);
 
   const handleShare = useCallback(async () => {
-    const text = `My Hidden Gems weather pick for ${MONTHS[monthIndex]}:\n${topRecommendations
+    const text = `My KuboVista weather pick for ${MONTHS[monthIndex]}:\n${topRecommendations
       .slice(0, 3)
       .map((r) => `• ${r.dest.name} — ${r.badge}`)
       .join("\n")}`;
 
     if (navigator.share) {
       try {
-        await navigator.share({ title: "Hidden Gems Weather Picks", text });
+        await navigator.share({ title: "KuboVista Weather Picks", text });
       } catch {
         // ignore
       }

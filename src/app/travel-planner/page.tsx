@@ -121,7 +121,7 @@ export default function TravelPlannerPage() {
       ``,
       `💰 Total Estimated: ₹${itinerary.budgetBreakdown.total.toLocaleString("en-IN")}`,
       ``,
-      `Plan your trip at HiddenGems!`,
+      `Plan your trip at KuboVista!`,
     ].join("\n");
 
     navigator.clipboard.writeText(text).then(() => {

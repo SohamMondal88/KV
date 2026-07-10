@@ -21,14 +21,14 @@ export default function TermsPage() {
             <div>
               <h2 className="text-xl font-bold text-foreground">1. Acceptance of Terms</h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                By accessing or using the Hidden Gems website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+                By accessing or using the KuboVista website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
               </p>
             </div>
 
             <div>
               <h2 className="text-xl font-bold text-foreground">2. Services</h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Hidden Gems provides an online platform to discover, plan, and book travel experiences in offbeat Himalayan destinations. We act as an intermediary between travelers and local service providers, including homestays, hotels, guides, and transport operators.
+                KuboVista provides an online platform to discover, plan, and book travel experiences in offbeat Himalayan destinations. We act as an intermediary between travelers and local service providers, including homestays, hotels, guides, and transport operators.
               </p>
             </div>
 
@@ -62,14 +62,14 @@ export default function TermsPage() {
             <div>
               <h2 className="text-xl font-bold text-foreground">6. Limitation of Liability</h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Hidden Gems is not liable for personal injury, loss, or damage arising from activities arranged through third-party providers. We strongly recommend purchasing comprehensive travel insurance.
+                KuboVista is not liable for personal injury, loss, or damage arising from activities arranged through third-party providers. We strongly recommend purchasing comprehensive travel insurance.
               </p>
             </div>
 
             <div>
               <h2 className="text-xl font-bold text-foreground">7. Intellectual Property</h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                All content on this website, including text, images, logos, and software, is the property of Hidden Gems Travel Pvt. Ltd. or its licensors. You may not reproduce, distribute, or create derivative works without written permission.
+                All content on this website, including text, images, logos, and software, is the property of KuboVista Travel Pvt. Ltd. or its licensors. You may not reproduce, distribute, or create derivative works without written permission.
               </p>
             </div>
 
@@ -90,7 +90,7 @@ export default function TermsPage() {
             <div>
               <h2 className="text-xl font-bold text-foreground">10. Contact</h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                For any questions regarding these Terms, please contact us at hello@hiddengems.com.
+                For any questions regarding these Terms, please contact us at hello@KuboVista.com.
               </p>
             </div>
           </div>

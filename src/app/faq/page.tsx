@@ -12,9 +12,9 @@ const categoryTabs = ["General", "Booking", "Destinations", "Safety", "Payments"
 
 const generalFaqs = [
   {
-    question: "What is Hidden Gems?",
+    question: "What is KuboVista?",
     answer:
-      "Hidden Gems is a luxury travel platform specializing in offbeat Himalayan destinations, curated homestays, and authentic local experiences.",
+      "KuboVista is a luxury travel platform specializing in offbeat Himalayan destinations, curated homestays, and authentic local experiences.",
   },
   {
     question: "How do I book a trip?",

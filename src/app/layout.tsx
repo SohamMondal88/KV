@@ -12,39 +12,39 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Hidden Gems — Discover Offbeat Himalayan Destinations",
-    template: "%s | Hidden Gems",
+    default: "KuboVista — Discover Offbeat Himalayan Destinations",
+    template: "%s | KuboVista",
   },
   description:
-    "Discover offbeat Himalayan destinations with Hidden Gems. Curated homestays, trekking packages, local food guides, and unforgettable experiences in the untouched corners of North Bengal and Sikkim.",
+    "Travel For Premium Memories. KuboVista curates extraordinary offbeat Himalayan destinations with curated homestays, trekking packages, local food guides, and unforgettable experiences in North Bengal and Sikkim.",
   keywords: [
-    "hidden gems", "offbeat travel", "Himalayan destinations", "North Bengal travel", "Sikkim travel",
+    "KuboVista", "offbeat travel", "Himalayan destinations", "North Bengal travel", "Sikkim travel",
     "homestays", "trekking", "Kalimpong", "Pelling", "Darjeeling", "Mirik", "Sittong", "Lamahatta",
     "travel packages", "Himalayan food guide", "local experiences", "sustainable tourism"
   ],
-  authors: [{ name: "Hidden Gems Travel" }],
-  creator: "Hidden Gems Travel",
-  metadataBase: new URL("https://hiddengems.travel"),
+  authors: [{ name: "KuboVista Travel" }],
+  creator: "KuboVista Travel",
+  metadataBase: new URL("https://KuboVista.travel"),
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "/",
-    siteName: "Hidden Gems",
-    title: "Hidden Gems — Discover Offbeat Himalayan Destinations",
-    description: "Discover offbeat Himalayan destinations with Hidden Gems. Curated homestays, trekking packages, local food guides, and unforgettable experiences.",
+    siteName: "KuboVista",
+    title: "KuboVista — Discover Offbeat Himalayan Destinations",
+    description: "Discover offbeat Himalayan destinations with KuboVista. Curated homestays, trekking packages, local food guides, and unforgettable experiences.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Hidden Gems - Offbeat Himalayan Travel",
+        alt: "KuboVista - Offbeat Himalayan Travel",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hidden Gems — Discover Offbeat Himalayan Destinations",
-    description: "Discover offbeat Himalayan destinations with Hidden Gems. Curated homestays, trekking packages, local food guides, and unforgettable experiences.",
+    title: "KuboVista — Discover Offbeat Himalayan Destinations",
+    description: "Discover offbeat Himalayan destinations with KuboVista. Curated homestays, trekking packages, local food guides, and unforgettable experiences.",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -63,6 +63,9 @@ export const metadata: Metadata = {
   },
 };
 
+import { CartProvider } from "@/lib/cart-context";
+import { AuthProvider } from "@/lib/auth-context";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -75,10 +78,14 @@ export default function RootLayout({
         <meta name="theme-color" content="#0B5D3B" />
       </head>
       <body className="min-h-full flex flex-col font-sans">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <AIChatbot />
+        <AuthProvider>
+          <CartProvider>
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <AIChatbot />
+          </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );

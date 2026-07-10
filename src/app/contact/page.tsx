@@ -57,7 +57,7 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: "Email",
-      lines: ["hello@hiddengems.com", "support@hiddengems.com"],
+      lines: ["hello@KuboVista.com", "support@KuboVista.com"],
     },
     {
       icon: Phone,
@@ -68,7 +68,7 @@ export default function ContactPage() {
       icon: MapPin,
       title: "Address",
       lines: [
-        "Hidden Gems Travel Pvt. Ltd.",
+        "KuboVista Travel Pvt. Ltd.",
         "12 MG Marg, Gangtok, Sikkim",
         "India — 737101",
       ],

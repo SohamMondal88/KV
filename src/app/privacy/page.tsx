@@ -21,7 +21,7 @@ export default function PrivacyPage() {
             <div>
               <h2 className="text-xl font-bold text-foreground">1. Introduction</h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Hidden Gems Travel Pvt. Ltd. (“we”, “our”, or “us”) respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
+                KuboVista Travel Pvt. Ltd. (“we”, “our”, or “us”) respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
               </p>
             </div>
 
@@ -87,7 +87,7 @@ export default function PrivacyPage() {
             <div>
               <h2 className="text-xl font-bold text-foreground">9. Contact Us</h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                If you have any questions about this Privacy Policy, please contact us at hello@hiddengems.com or through our Contact page.
+                If you have any questions about this Privacy Policy, please contact us at hello@KuboVista.com or through our Contact page.
               </p>
             </div>
           </div>

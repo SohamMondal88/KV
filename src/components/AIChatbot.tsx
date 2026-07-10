@@ -50,7 +50,7 @@ export function getAIResponse(
     q.trim().length === 0 ||
     /^(hi|hello|hey|good morning|good afternoon|good evening|greetings)/.test(q)
   ) {
-    return "Hello! I'm your Hidden Gems AI Assistant. Ask me anything about our destinations!";
+    return "Hello! I'm your KuboVista AI Assistant. Ask me anything about our destinations!";
   }
 
   const compareMatch = findTwoDestinations(q);
@@ -145,7 +145,7 @@ export default function AIChatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "ai",
-      text: "Hello! I'm your Hidden Gems AI Assistant. Ask me anything about our destinations!",
+      text: "Hello! I'm your KuboVista AI Assistant. Ask me anything about our destinations!",
       timestamp: new Date(),
     },
   ]);
@@ -193,7 +193,7 @@ export default function AIChatbot() {
     setMessages([
       {
         role: "ai",
-        text: "Hello! I'm your Hidden Gems AI Assistant. Ask me anything about our destinations!",
+        text: "Hello! I'm your KuboVista AI Assistant. Ask me anything about our destinations!",
         timestamp: new Date(),
       },
     ]);
@@ -226,7 +226,7 @@ export default function AIChatbot() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-card-foreground">
-                    Hidden Gems AI
+                    KuboVista AI
                   </p>
                   <p className="text-[11px] text-muted-foreground">
                     Assistant

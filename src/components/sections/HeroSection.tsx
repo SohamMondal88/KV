@@ -4,6 +4,11 @@ import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Search, Calendar, Users, ChevronDown, MapPin } from "lucide-react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const ThreeHero = dynamic(() => import("@/components/ThreeHero").then((m) => m.ThreeHero), {
+  ssr: false,
+});
 
 export function HeroSection() {
   const { scrollY } = useScroll();
@@ -11,7 +16,7 @@ export function HeroSection() {
   const opacity = useTransform(scrollY, [0, 400], [1, 0]);
 
   return (
-    <section className="relative h-screen min-h-[700px] overflow-hidden">
+    <section className="relative h-screen min-h-[700px] overflow-hidden bg-forest">
       {/* Background Image with Parallax */}
       <motion.div style={{ y }} className="absolute inset-0 z-0">
         <Image
@@ -23,6 +28,11 @@ export function HeroSection() {
           sizes="100vw"
         />
       </motion.div>
+
+      {/* 3D Mountain Scene */}
+      <div className="absolute inset-0 z-[1] hidden md:block">
+        <ThreeHero />
+      </div>
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 z-10 bg-black/40" />
@@ -40,14 +50,24 @@ export function HeroSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-balance text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Discover Hidden Gems of the Himalayas
+            Discover KuboVista
           </motion.h1>
+
+          {/* Slogan */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="mt-2 text-xl font-medium tracking-wide text-accent sm:text-2xl md:text-3xl"
+          >
+            Travel For Premium Memories
+          </motion.p>
 
           {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             className="mt-6 text-lg text-white/90 sm:text-xl md:text-2xl"
           >
             Offbeat destinations, authentic homestays, and unforgettable adventures

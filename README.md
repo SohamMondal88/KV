@@ -1,4 +1,4 @@
-# Hidden Gems — Offbeat Himalayan Travel Platform
+# KuboVista — Offbeat Himalayan Travel Platform
 
 A luxury, production-ready travel platform focused on **17 curated offbeat destinations** in North Bengal and Sikkim, India.
 

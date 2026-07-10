@@ -136,7 +136,7 @@ export interface Destination {
   bestTime: string;
   bestTimeMonths: string[];
   nearbyAttractions: Attraction[];
-  hiddenGems: HiddenGem[];
+  KuboVista: HiddenGem[];
   viewpoints: Viewpoint[];
   adventureActivities: Activity[];
   localFood: string[];

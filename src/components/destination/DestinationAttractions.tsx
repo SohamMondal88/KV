@@ -48,9 +48,9 @@ export function DestinationAttractions({ destination }: DestinationAttractionsPr
           ))}
         </div>
 
-        <SectionHeading title="Hidden Gems" align="left" className="mb-8 mt-14" />
+        <SectionHeading title="KuboVista" align="left" className="mb-8 mt-14" />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {destination.hiddenGems.map((gem, i) => (
+          {destination.KuboVista.map((gem, i) => (
             <motion.div
               key={gem.id}
               initial={{ opacity: 0, y: 20 }}

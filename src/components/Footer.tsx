@@ -10,6 +10,9 @@ const quickLinks = [
   { href: "/about", label: "About Us" },
   { href: "/destinations", label: "Destinations" },
   { href: "/packages", label: "Travel Packages" },
+  { href: "/homestays", label: "Homestays" },
+  { href: "/book-taxi", label: "Book Taxi" },
+  { href: "/book-guide", label: "Book Guide" },
   { href: "/blog", label: "Travel Blog" },
   { href: "/contact", label: "Contact" },
 ];
@@ -38,10 +41,10 @@ export function Footer() {
           <div className="flex flex-col gap-6">
             <Link href="/" className="flex items-center gap-2 text-foreground">
               <Mountain className="h-7 w-7 text-primary" />
-              <span className="text-xl font-bold tracking-tight">Hidden Gems</span>
+              <span className="text-xl font-bold tracking-tight">KuboVista</span>
             </Link>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Curating extraordinary journeys to the Himalayas most untouched
+              Travel For Premium Memories. KuboVista curates extraordinary journeys to the Himalayas most untouched
               corners. Experience authentic culture, serene landscapes, and
               memories that last a lifetime.
             </p>
@@ -108,7 +111,7 @@ export function Footer() {
             <div className="flex flex-col gap-3 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 shrink-0 text-primary" />
-                <span>hello@hiddengems.travel</span>
+                <span>hello@KuboVista.travel</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 shrink-0 text-primary" />
@@ -148,7 +151,7 @@ export function Footer() {
       <div className="border-t border-border">
         <Container className="flex flex-col items-center justify-between gap-2 py-6 sm:flex-row">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Hidden Gems. All rights reserved.
+            © {new Date().getFullYear()} KuboVista. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <Link

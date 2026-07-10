@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
@@ -13,6 +12,7 @@ import {
   Waves,
   Camera,
 } from "lucide-react";
+import { StaggerList } from "@/components/animations/GSAPScroll";
 
 const activities = [
   {
@@ -70,17 +70,16 @@ export function AdventureActivities() {
           accentColor="bg-accent"
         />
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {activities.map((activity, index) => {
+        <StaggerList
+          className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          childClassName="group rounded-2xl border border-border bg-card p-6 transition-colors hover:bg-card/80"
+          stagger={0.08}
+          y={30}
+        >
+          {activities.map((activity) => {
             const Icon = activity.icon;
             return (
-              <motion.div
-                key={activity.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="group rounded-2xl border border-border bg-card p-6 transition-colors hover:bg-card/80">
+              <React.Fragment key={activity.title}>
                 <div
                   className={`inline-flex h-12 w-12 items-center justify-center rounded-xl ${activity.color}`}
                 >
@@ -97,10 +96,10 @@ export function AdventureActivities() {
                     Explore →
                   </Button>
                 </div>
-              </motion.div>
+              </React.Fragment>
             );
           })}
-        </div>
+        </StaggerList>
       </Container>
     </section>
   );

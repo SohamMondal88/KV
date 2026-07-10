@@ -324,7 +324,7 @@ export default function TripCalculatorPage() {
 
   const handleShare = async () => {
     const lines = [
-      `Trip Budget Calculation — Hidden Gems`,
+      `Trip Budget Calculation — KuboVista`,
       ``,
       `Destination: ${form.destination}`,
       `People: ${form.people} | Days: ${form.days} | Style: ${form.travelStyle}`,
@@ -888,7 +888,7 @@ export default function TripCalculatorPage() {
             >
               <SectionHeading
                 title="Compare Destinations"
-                subtitle="See how the same trip parameters cost across different hidden gems."
+                subtitle="See how the same trip parameters cost across different KuboVista."
                 align="left"
               />
               <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

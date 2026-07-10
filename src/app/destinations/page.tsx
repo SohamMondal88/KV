@@ -11,6 +11,7 @@ import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { StarRating } from "@/components/ui/StarRating";
+import { DestinationsOverviewMap } from "@/components/maps/DestinationsOverviewMap";
 
 export default function DestinationsPage() {
   const [search, setSearch] = useState("");
@@ -79,6 +80,16 @@ export default function DestinationsPage() {
               Explore offbeat Himalayan gems curated for the curious traveler.
             </p>
           </motion.div>
+        </Container>
+      </section>
+
+      {/* Overview Map */}
+      <section className="border-b border-border bg-muted/30 py-12">
+        <Container>
+          <h2 className="mb-4 text-center text-xl font-semibold text-foreground">
+            Explore Destinations on the Map
+          </h2>
+          <DestinationsOverviewMap />
         </Container>
       </section>
 

@@ -1,11 +1,12 @@
 "use client";
 
 import React from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { CounterAnimation } from "@/components/animations/GSAPScroll";
 import {
   MapPin,
   Heart,
@@ -17,36 +18,6 @@ import {
   Building,
   Package,
 } from "lucide-react";
-
-function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
-  const ref = React.useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true });
-  const [count, setCount] = React.useState(0);
-
-  React.useEffect(() => {
-    if (!isInView) return;
-    let start = 0;
-    const duration = 1500;
-    const step = Math.ceil(target / (duration / 16));
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= target) {
-        setCount(target);
-        clearInterval(timer);
-      } else {
-        setCount(start);
-      }
-    }, 16);
-    return () => clearInterval(timer);
-  }, [isInView, target]);
-
-  return (
-    <span ref={ref}>
-      {count}
-      {suffix}
-    </span>
-  );
-}
 
 export default function AboutPage() {
   const valueCards = [
@@ -152,7 +123,7 @@ export default function AboutPage() {
             transition={{ delay: 0.1 }}
             className="mx-auto mt-4 max-w-2xl text-lg text-white/80"
           >
-            Born in the Himalayas, built for the curious traveler. Hidden Gems is redefining how India discovers its own mountains.
+            Born in the Himalayas, built for the curious traveler. KuboVista is redefining how India discovers its own mountains.
           </motion.p>
         </Container>
       </section>
@@ -173,11 +144,11 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Why Hidden Gems */}
+      {/* Why KuboVista */}
       <section className="border-t border-border bg-muted/40 py-16">
         <Container>
           <SectionHeading
-            title="Why Hidden Gems?"
+            title="Why KuboVista?"
             subtitle="Four pillars that define everything we do."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -219,7 +190,7 @@ export default function AboutPage() {
               >
                 <s.icon className="h-8 w-8 text-primary" />
                 <span className="mt-4 text-3xl font-extrabold text-foreground">
-                  <AnimatedCounter target={s.value} suffix={s.suffix} />
+                  <CounterAnimation target={s.value} suffix={s.suffix} duration={2} />
                 </span>
                 <span className="mt-1 text-sm font-medium text-muted-foreground">
                   {s.label}
