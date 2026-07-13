@@ -42,6 +42,12 @@ const makeDestination = (base: Partial<Destination> & { id: string; name: string
     thingsToAvoid: ["Littering in natural areas", "Disrespecting religious sites", "Traveling without permits in restricted areas"],
     commonScams: ["Overpriced taxi fares - always negotiate", "Fake guide services - book through verified platforms"],
     weatherAlerts: ["Landslide risk during monsoon (Jun-Sep)", "Sudden temperature drops in evening"],
+    emergencyContacts: [
+      { name: "Primary Health Center", phone: "0354-255XXXX", type: "hospital" },
+      { name: "Local Police Station", phone: "100", type: "police" },
+      { name: "Disaster Management", phone: "1070", type: "rescue" },
+      { name: "Tourist Helpline", phone: "1363", type: "tourist" },
+    ],
     reviews: [
       { id: "r1", name: "Rahul Sharma", avatar: "", rating: 5, date: "2024-12-15", comment: "Beautiful place with stunning views!" },
       { id: "r2", name: "Priya Das", avatar: "", rating: 4, date: "2024-11-20", comment: "Loved the homestays and local food." },

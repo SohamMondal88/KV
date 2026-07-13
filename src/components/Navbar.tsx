@@ -16,6 +16,7 @@ import {
   Globe,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { NotificationBell } from "@/app/notifications/page";
 
 const navLinks = [
   { href: "/destinations", label: "Destinations" },
@@ -142,6 +143,9 @@ export function Navbar() {
             >
               <Heart className="h-4 w-4" />
             </Link>
+
+            {/* Notifications */}
+            <NotificationBell />
 
             {/* Dark Mode */}
             <button
